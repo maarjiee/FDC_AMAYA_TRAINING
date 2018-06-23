@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FDC_JS_ACTIVITY_1_2</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<script
+  	src="https://code.jquery.com/jquery-3.3.1.min.js"
+  	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  	crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div id="accordion">
+		 <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          FDC_JS_ACTIVITY_1_2
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      	<div class="card-body">
+       		<h3 class="font-italic">Bubble Sort</h3>
+       		<input type="number" id="number">
+       		<button onclick="bubbleSort()" value="Enter" class="btn btn-primary">Enter</button>
+       		<p id="showNum" class="font-weight-bold">Base Numbers: </p>
+       		<p id="asc" class="font-weight-bold"> </p>
+       		<p id="desc" class="font-weight-bold"></p>
+
+
+
+       <script>
+
+       		var arr = [];
+
+       		function bubbleSort(){
+				var input = document.getElementById('number').value;
+					if(!input){
+						return ;
+					 }
+
+				arr.push(parseInt(input));
+
+				//Show base numbers
+				document.getElementById('showNum').innerHTML +=  input + ', ';
+			
+				var tmp = 0;
+				var len = arr.length;
+				for(var i = 0 ; i < len -1 ; i++){
+					for(var j = 0 ; j < len - 1 - i ; j++){
+
+						 if(arr[j] > arr[j + 1] ){
+							tmp = arr[j];
+							arr[j] = arr[j + 1];
+						 	arr[j + 1] = tmp;
+						 }
+					}
+				}
+					document.getElementById('asc').innerHTML = "Bubble Sort : " + arr;
+
+				//clearing field
+				var entry = document.getElementById('number');
+				entry.value = "";
+       		}
+
+       </script>
+       
+       	</div>
+      </div>
+     </div> 
+    </div>
+
+
+</body>
+</html>

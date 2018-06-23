@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>>FDC_JS_ACTIVITY_1_3</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<script
+  	src="https://code.jquery.com/jquery-3.3.1.min.js"
+  	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  	crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+</head>
+</head>
+<body>
+<div id="accordion">
+		 <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          FDC_JS_ACTIVITY_1_3
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      	<div class="card-body">
+
+       		<h3 class="font-italic">Strings</h3>
+       		<button onclick="maxStrings()" value="" class="btn btn-primary">Get Maximum</button>
+       		<button onclick="minStrings()" value="" class="btn btn-primary">Get Minimum</button>
+       		<p id="strMax" class="font-weight-bold"> </p>
+
+       		<p id="highest" class="font-weight-bold"> </p>
+       		<br>
+       		<p id="strMin" class="font-weight-bold"> </p>
+
+       		<p id="lowest" class="font-weight-bold"> </p>
+
+
+
+       <script>
+	       	var arrString = [];
+	       	var inputBox = "";
+	       	var maxString = "";
+	       	var minString = "";
+	       	var tmpString = "";
+	       	function maxStrings(){
+	       		inputBox =  prompt("Enter Strings here");
+	       		
+	       		if(!inputBox){
+						return ;
+				}
+
+	       		arrString.push(inputBox);
+	       		document.getElementById('strMax').innerHTML = "[ " + arrString + " ]" ;
+
+	       		//Max character count
+	     		for(var i = 0 ; i < arrString.length; i++){
+	     			// - continue
+	     			if (i == 0) {
+	     				maxString = arrString[i];
+	     				continue;
+	     			}
+
+	     			// - get current word
+	     			 tmpString = arrString[i];
+
+	     			// - max string
+	     			if (tmpString.length > maxString.length) {
+	     				maxString = tmpString;
+	     				continue;
+	     			}
+				}
+
+				document.getElementById('strMax').innerHTML = "[ " + arrString + " ]" ;
+				document.getElementById('highest').innerHTML = "Maximum String: " + maxString;
+			}
+
+			function minStrings(){
+				inputBox =  prompt("Enter Strings here");
+				if(!inputBox){
+					return;
+				}
+
+				arrString.push(inputBox);
+				document.getElementById('strMin').innerHTML = "[ " + arrString + " ]" ;
+
+				for(var i = 0 ; i < arrString.length ; i++){
+
+					if(i == 0){
+						minString = arrString[i];
+						continue;
+					}
+
+					tmpString = arrString[i];
+
+					// min string
+					if(tmpString.length < minString.length){
+						minString = tmpString;
+						continue;
+					}
+				}
+				document.getElementById('strMin').innerHTML = "[ " + arrString + " ]" ;
+				document.getElementById('lowest').innerHTML = "Minimum String: " + minString;
+
+			}
+
+       </script>
+       
+       	</div>
+      </div>
+     </div> 
+    </div>
+
+</body>
+</html>
