@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FDC JQ_ACTIVITY_1_3</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+</head>
+</head>
+<body>
+	<div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Activity #3
+        </button>
+        </h5>
+      </div>
+      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-body">
+         
+          <hr>
+          <span style='font-size: 40px;'>Change LABEL's style</span>
+          <hr>
+          <label>Hello This Welcome to JQuery!!</label>
+          <br>
+          <button class="btn btn-default" style-type="bold"><b>BOLD</b></button>
+          <button class="btn btn-default" style-type="underline"><u>UNDERLINE</u></button>
+          <button class="btn btn-default" style-type="ital"><i>ITALICIZED</i></button>
+          <button class="btn btn-default" style-type="strike"><del>STRIKETHROUGH</del></button>
+
+        </div>
+
+        <script>
+        	$(document).ready(function(){
+            //Native code
+
+        		//bold
+        		$("b").on("click",function(){
+        		  $("label").removeAttr("style");
+        			$("label").css("font-weight","bold");
+        			
+        		});
+        		
+        		//underline
+        		$("u").on("click",function(){
+        			$("label").removeAttr("style");
+        			$("label").css("text-decoration","underline");
+        		});
+
+        		//italicized
+        		$("i").on("click",function(){
+        			$("label").removeAttr("style");
+        			$("label").css("font-style","italic");
+        		});
+
+        		//strikethrough
+        		$("del").on("click",function(){
+        			$("label").removeAttr("style");
+        			$("label").css("text-decoration","line-through");
+        		});
+
+            //Optimize code
+            // $('.btn').on('click', function(){
+            //   var styleType = $(this).attr("style-type");
+            //   $("label").removeAttr("style");
+
+            //   if (styleType == "bold") {
+            //     $("label").css("font-weight","bold");
+            //   } else if (styleType == "underline") {
+            //     $("label").css("text-decoration","underline");
+
+            //   } else if (styleType == "ital") {
+            //     $("label").css("font-style","italic");
+                
+            //   } else if (styleType == "strike") {
+            //     $("label").css("text-decoration","line-through");
+            //   }
+            // });
+
+        	});
+
+        </script>
+</body>
+</html>

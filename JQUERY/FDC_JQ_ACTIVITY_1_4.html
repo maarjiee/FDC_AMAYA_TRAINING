@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FDC JQ_ACTIVITY_1_4</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<div class="card">
+      <div class="card-header" id="headingThree">
+        <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+        Activity #4
+        </button>
+        </h5>
+      </div>
+      <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+        <div class="card-body">
+      	
+      	<p id="display"></p>
+     
+      	<script>
+      		$(document).ready(function(){
+      			$("button").on("click",function(){
+      				var count = $("*").length;
+      				$("#display").html("Elements present within a document : " + count);
+      			});
+        			
+      			
+      		});
+      	</script>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

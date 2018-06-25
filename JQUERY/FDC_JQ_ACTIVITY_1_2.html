@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQUERY ACTIVITY_1_2</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+	<div>
+       	<h3 class="font-italic"><center>Add rows</center></h3>
+       	<center><button id="add_row"  class="table-primary">Add rows</button></center><br>
+    </div>
+
+	<center>
+    	<table border= "1px solid black">
+    		<thead>
+		    		<tr>
+		    			<td>First Name</td>
+		    			<td >Middle name</td>
+		    			<td>Last Name</td>
+		    			<td>Age</td>
+		    		</tr>		
+		    </thead>
+		  	<tbody>
+		  		<tr class="master_row" style="display: none;">
+		  			<td class="fname"></td>
+		  			<td class="mname"></td>
+		  			<td class="lname"></td>
+		  			<td class="age"></td>
+		  		</tr>
+    		</tbody>
+    	</table>
+  	<center>
+    <script>
+
+	       $(document).ready(function(){	
+	       		$("#add_row").on("click",function(){
+	       			var tmpCount = $("tbody tr").length;
+
+	       			//Native code
+	       	 		var tmpRow = "<tr id='marj_row_"+ tmpCount +"'>";
+	       	 		tmpRow += "<td></td>";
+	       	 		tmpRow += "<td></td>";
+	       	 		tmpRow += "<td></td>";
+	       	 		tmpRow += "<td></td>";
+	       	 		tmpRow += "</tr>";
+
+	       	 		//Optimized code
+	       	 		// var tmpRow = $(".master_row").clone();
+	       	 		// tmpRow.show();
+	       	 		// tmpRow.find(".fname").html("sample");
+	       	 		// tmpRow.find(".mname").html("sample");
+	       	 		// tmpRow.find(".lname").html("sample");
+	       	 		// tmpRow.find(".age").html("sample");
+	       	 		// tmpRow.removeClass("master_row");
+
+	       	 		$("tbody").append(tmpRow);
+	       	 		$("tbody tr td").css({"border" : "1px","border-style": "solid", "height":"20px"});
+	       	 	});
+	       });
+
+     </script>  
+</body>
+</html>
