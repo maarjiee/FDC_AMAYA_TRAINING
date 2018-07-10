@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SQL Explaination</title>
+</head>
+<body>
+	<center><h2>Sample table</h2></center>	
+	<center><img src="joins/tables.jpg"></center>
+
+	<p>LEFT JOIN returns all rows from the left table, even if there are no matches in the right table. <br>
+		This means that if the ON clause matches 0 (zero) records in the right table; the join will still return a row in the result, <br>but with NULL in each column from the right table.</p>
+	<h3>Result for LEFT JOIN</h3>
+	<img src="joins/left_join.jpg">
+	<p>RIGHT JOIN returns all rows from the right table, even if there are no matches in the left table.<br> This means that if the ON clause matches 0 (zero) records in the left table; the join will still return a row in the result,<br> but with NULL in each column from the left table.</p>
+	<h3>Result for RIGHT JOIN</h3>
+	<img src="joins/right_join.jpg">
+
+	<p>INNER JOIN creates a new result table by combining column values of two tables (table1 and table2) based upon the join-predicate. The query compares each row of table1 with each row of table2 to find all pairs of rows which satisfy the join-predicate. When the join-predicate is satisfied, column values for each matched pair of rows of A and B are combined into a result row.		
+</p>
+<h3>Result for INNER JOIN</h3>
+	<img src="joins/inner_join.jpg">
+	<p>OUTER JOIN is same as INNER JOIN, but it also include NULL data on ResultSet.</p>
+	<ul>
+		<li>LEFT JOIN = INNER JOIN + Unmatched data of left table with Null match on right table.</li>
+		<li>RIGHT JOIN = INNER JOIN + Unmatched data of right table with Null match on left table.</li>
+		<li>FULL JOIN = INNER JOIN + Unmatched data on both right and left tables with null matches.</li>
+	</ul>
+	<p><b>A  (left) outer join  shows rows for each record on the left hand side, even if there are no matching rows on the other (right) side of the join.<br> If there is no matching row, the columns for the other (right) side would show NULLs.</b></p>
+	<p><code>In this case I use FULL OUTER JOIN</code></p>
+	<img src="joins/full_outer_join.jpg">
+	
+</body>
+</html>
