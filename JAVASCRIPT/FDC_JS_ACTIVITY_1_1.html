@@ -29,6 +29,9 @@
         
        	function printName(){
        		var name = prompt("Please enter your name here","");
+          if(!name){
+            return ;
+        }
        		document.getElementById('name').innerHTML = "Hi " + name + " Welcome to Javascript!!";
        	}
        </script>
