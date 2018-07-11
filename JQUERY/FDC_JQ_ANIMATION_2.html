@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQ_ANIMATION_2</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animation.css">
+	<script
+	  src="https://code.jquery.com/jquery-3.3.1.min.js"
+	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+	<div id="accordion">
+		<div class="card">
+	      <div class="card-header" id="headingOne">
+	        <h5 class="mb-0">
+	        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+	        Activity #2
+	        </button>
+	        </h5>
+	      </div>
+	      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+	        <div class="card-body">
+	         	<div id="images" >
+	         		<img id="image" src="">
+	         	</div>	
+	        </div>
+	      </div>
+	    </div>
+	</div>
+<script>
+	var images = ["https://www.thehappycatsite.com/wp-content/uploads/2017/05/girl-cat.jpg","https://www.aspcapetinsurance.com/media/1034/31.jpg","http://cvcl.mit.edu/hybrid/cat2.jpg","https://www.adventurecats.org/wp-content/uploads/2015/09/attentive-cat.jpg","http://is2.4chan.org/pol/1530759120421.jpg"];
+	var i = 0;
+	$(document).ready(function(){
+		slideShow();
+	});
+
+function slideShow(){
+	var imageAnimate = $("#image");
+	imageAnimate.stop().animate({opacity: '1'},1000,function(){
+			$("#image").attr('src',images[i]);
+			if( i < images.length){
+				i++;
+			}else{
+				i = 0;
+				
+			}
+			imageAnimate.stop().animate({opacity: '1'},500,function(){
+				slideShow();
+
+			});
+		});
+}
+
+</script>
+</body>
+</html>

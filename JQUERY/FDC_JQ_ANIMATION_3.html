@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQ_ANIMATION_3</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animation.css">
+	<script
+	  src="https://code.jquery.com/jquery-3.3.1.min.js"
+	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+<style>
+	.boxstyle{
+		height: 100px;
+		width: 100px;
+		position:absolute;
+		background-color: black;
+	}
+	.holder{
+		height: 500px;
+		width: 500px;
+		border: 1px solid;
+		background-color: #f963e8;
+		
+	}
+</style>
+</head>
+<body>
+	<div class="holder">
+		<div id="box" class="boxstyle">
+			
+		</div>
+	</div>
+
+	<script>
+		
+		$(document).ready(function(){
+			moveBox();
+		});
+
+		function moveBox(){
+			$("#box").animate({
+				marginLeft: '+=400'
+			},1000);
+
+			$("#box").animate({
+				marginTop: '+=400'
+			},1000);
+			$("#box").animate({
+				marginLeft: '-=400'
+			},1000);
+			$("#box").animate({
+				marginTop: '-=400'
+			},1000);
+
+			$("#box").animate({},1000,function(){
+				moveBox();
+			});
+		}
+
+
+	</script>
+</body>
+</html>
