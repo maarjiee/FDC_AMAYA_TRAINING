@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To Do App</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/design.css">
+	<script
+  	src="https://code.jquery.com/jquery-3.3.1.min.js"
+  	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  	crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+	<div class="container" >
+		<div class="background">
+			<form class="form-inline" action="javascript:void(0);">
+				<div class="form-group">
+					<div class="pad">
+						<p><b>My ToDo App </b></p><br>
+						<input type="url"  class="form-control" name="link" placeholder="image link" id="imageLink" required>
+						<input type="text"  class="form-control" name="title" placeholder="title" id="title_todo" required>
+						<input type="text"  class="form-control" name="title" placeholder="description" id="description_todo" required>
+						<button onclick="save()" class="btn" >Save</button>
+					</div>
+				</div>
+			</form>
+
+			<div id="content">
+
+			</div>
+
+		
+		</div>
+	</div>
+	<script>
+
+	
+		var index = null;
+		var contentNum = 0;
+		var imglink = document.getElementById('imageLink');
+		var titleTodo = document.getElementById('title_todo');
+		var description = document.getElementById('description_todo');
+
+		function save(){
+			var pattern = /.(jpg|gif|png)$/;
+			var result = pattern.test(imglink.value);
+			 
+			 if(!result){
+			 	alert("Oops! It seems you input invalid image link! Please provide image link only!");
+			 	return ;
+			 }else if(!titleTodo.value){
+			 	return;
+			 }else if(!description.value){
+				return;
+			 }
+			 		
+			if(index != null ){
+				updateContent(imglink,titleTodo,description);
+			}else{
+
+					var content = "<div id='content_"+ contentNum +"'>";
+					content += "<div class='background content'>";
+					content += "<div class='innercon' id='inner'>";
+					content += "<div class='image'>";
+					content += "<img id='imageCont_"+ contentNum +"' src='"+ imglink.value +"'>";
+					content += "<p id='titleCont_"+ contentNum +"' class='title'>" + titleTodo.value + "</p>";
+					
+					content += "<p id='descCont_"+ contentNum +"' class='description'>" + description.value +"</p>";
+					content += "<button id='edit' class='btn btn-info' onclick='retrieveFields("+ contentNum +")'> Edit</button>";
+					content += "<button id='delete' class='btn btn-danger' onclick='deleteCont("+ contentNum +")'>Delete</button>";
+					
+					content += "</div>";
+					content += "</div>";
+					content += "</div>";
+					content += "</div>";
+					contentNum++;
+
+				document.getElementById('content').innerHTML += content ;
+
+				
+			}		
+			//clearing field	
+				imglink.value = "";
+				titleTodo.value = "";
+				description.value = "";
+			
+		}
+
+
+		function deleteCont(i) {
+   		  	var del = document.getElementById('content_'+ i);
+    		del.remove(del.selectedIndex);
+		}
+		
+		function retrieveFields(i){
+			var imglink = document.getElementById('imageCont_'+ i);
+			var titleTodo = document.getElementById('titleCont_'+ i);
+			var description = document.getElementById('descCont_'+ i);
+
+			document.getElementById('imageLink').value = imglink.src;
+			document.getElementById('title_todo').value = titleTodo.innerHTML;
+			document.getElementById('description_todo').value = description.innerHTML;
+			index = i;
+		}
+
+		function updateContent(image,title,description){
+			var imgVal = document.getElementById('imageCont_'+ index).src = image.value;
+			document.getElementById('imageCont_'+ index).innerHTML = imgVal;
+			document.getElementById('titleCont_' + index).innerHTML = title.value;
+			document.getElementById('descCont_'+ index).innerHTML = description.value;
+			index = null;
+
+		}
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+.background{
+	background-color:#4d94ff;
+	width: 850px;
+	height: 150px;
+}
+input{
+	text-align: left;
+	margin-right: 10px;
+}
+button{
+
+}
+.pad{
+	padding-left: 70px;
+	height: 100px;
+	width: auto;
+	font-family: Georgia;
+	color: white;
+}
+.content{
+	height: 500px;
+	padding-top: 20px;
+
+}
+.innercon{
+		border: 1px solid;
+		margin-left: 70px;
+		width: 700px;
+		height: 420px;
+		background-color: white;
+
+}
+.image{
+	width: 650px;
+	height:250px;
+	border: 1px solid;
+	margin-left: 20px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+
+}
+img{
+	width: 650px;
+	height:250px;
+	border: 1px solid;
+}
+.description, .title, #edit, #delete{
+	margin-top: 10px;
+	margin-left: 20px
+}
+
