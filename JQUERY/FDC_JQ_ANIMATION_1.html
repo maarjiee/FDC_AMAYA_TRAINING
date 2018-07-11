@@ -34,7 +34,7 @@
 
 	</div>
 <script>
-	var images = ["https://www.thehappycatsite.com/wp-content/uploads/2017/05/girl-cat.jpg","https://www.aspcapetinsurance.com/media/1034/31.jpg","http://cvcl.mit.edu/hybrid/cat2.jpg","https://www.adventurecats.org/wp-content/uploads/2015/09/attentive-cat.jpg","http://is2.4chan.org/pol/1530759120421.jpg"];
+	var images = ["slide_images/image5.jpg","slide_images/image4.jpg","slide_images/image3.jpg","slide_images/image2.jpg","slide_images/image1.jpg"];
 
 	$(document).ready(function(){
 		var count = 0;
@@ -43,21 +43,20 @@
 		//Click Next
 		$("#image").attr("src",images[count]);
 		$("#next").on("click",function(){
-			 imageAnimate.animate({opacity: '0.5'},500,function(){
+			 imageAnimate.animate({opacity: '0.2'},100,function(){
 			 	$("#image").attr("src",images[count+1]);
 					count+=1;
 				 if(count >= images.length){
 				 	$("#image").attr("src",images[0]);
 				 	count = 0;
 				 }
-				 imageAnimate.animate({opacity: '1'},500);
+				 imageAnimate.animate({opacity: '1'},200);
 			 });
-			 console.log(count);
 		});
 
 		//Click Previous
 		$("#previous").on("click",function(){
-				imageAnimate.animate({opacity: '0.5'},500,function(){
+				imageAnimate.animate({opacity: '0.2'},100,function(){
 				$("#image").attr("src",images[count-1]);
 				count-=1;
 				
@@ -65,7 +64,7 @@
 			 	$("#image").attr("src",images[images.length-1]);
 			 	count = images.length-1;
 			 }
-			  imageAnimate.animate({opacity: '1'},500);
+			  imageAnimate.animate({opacity: '1'},200);
 			});
 		});
 	});

@@ -31,7 +31,8 @@
 	    </div>
 	</div>
 <script>
-	var images = ["https://www.thehappycatsite.com/wp-content/uploads/2017/05/girl-cat.jpg","https://www.aspcapetinsurance.com/media/1034/31.jpg","http://cvcl.mit.edu/hybrid/cat2.jpg","https://www.adventurecats.org/wp-content/uploads/2015/09/attentive-cat.jpg","http://is2.4chan.org/pol/1530759120421.jpg"];
+	var images = ["slide_images/image5.jpg","slide_images/image4.jpg","slide_images/image3.jpg","slide_images/image2.jpg","slide_images/image1.jpg"];
+
 	var i = 0;
 	$(document).ready(function(){
 		slideShow();
@@ -39,14 +40,14 @@
 
 function slideShow(){
 	var imageAnimate = $("#image");
-	imageAnimate.stop().animate({opacity: '1'},1000,function(){
+	imageAnimate.stop().animate({opacity: '1'},500,function(){
 			$("#image").attr('src',images[i]);
 			if( i < images.length){
 				i++;
 			}else{
-				i = 0;
-				
+				i = 0;	
 			}
+
 			imageAnimate.stop().animate({opacity: '1'},500,function(){
 				slideShow();
 
